@@ -1,0 +1,12 @@
+<div class="container" [class.success]="isComplete">
+  <input [ngClass]="{red: !isComplete, green: isComplete}" type="text" [(ngModel)]="counter!.name">
+  <button #btn (click)="incrementCounter()">számláló növelése</button>
+  <div [ngStyle]="{color: isComplete ? '#558b2f' : '#e53935'}">{{count}}/{{aim}}</div>
+  <div *ngIf="!isComplete; else elseContent">{{'Hajrá!' | uppercase}}</div>
+  <ng-template #elseContent>
+    Szép munka!
+  </ng-template>
+  {{counter | json}}
+</div>
+
+

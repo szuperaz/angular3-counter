@@ -1,0 +1,8 @@
+<h1>{{title}}</h1>
+<div>
+  <label>Hány számlálót szeretnél?</label>
+  <input [(ngModel)]="counterCount" (ngModelChange)="counterCountChnaged()" type="number">
+  {{counterCount}}
+</div>
+<app-counter *ngFor="let c of counters" [aim]="c.aim" [counter]="{name: c.name, id: c.id}"></app-counter>
+<img src="{{logoSrc}}">
